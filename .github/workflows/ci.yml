@@ -8,10 +8,6 @@ on:
       webhook_id:
         description: 'Webhook delivery ID'
         required: true
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
 
 jobs:
   test:
