@@ -52,7 +52,7 @@ jobs:
       - name: Notify n8n on success
         if: success()
         run: |
-          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}/ci-complete" \
+          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d '{
               "repository": "${{ github.repository }}",
@@ -67,7 +67,7 @@ jobs:
       - name: Notify n8n on failure
         if: failure()
         run: |
-          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}/ci-complete" \
+          curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \
             -H "Content-Type: application/json" \
             -d '{
               "repository": "${{ github.repository }}",
